@@ -1,0 +1,221 @@
+@import url(https://fonts.googleapis.com/css2?family=Shrikhand&display=swap);
+* {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+header,
+nav,
+section,
+article,
+footer {
+    display: block;
+}
+
+header,
+nav,
+section,
+article,
+footer {
+    color: white;
+}
+
+header {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+header {
+    background-color: rgb(235, 235, 235);
+    font-size: 36px;
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    top: 40px;
+    right: 25px;
+    background-color: blue;
+    width: 100px;
+}
+
+section {
+    width: 86%;
+    background-color: gray;
+    padding: 20px;
+    margin: 20px;
+}
+
+footer {
+    background-color: rgb(206, 206, 206);
+    font-size: 36px;
+    height: 80px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+body {
+    font-family: 'Shrikhand', cursive;
+    font-size: 14px;
+}
+
+input {
+    font-family: 'Shrikhand', cursive;
+    font-size: 20px;
+    color: #d1d1d1;
+    font-weight: 400;
+}
+
+input.number-input {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    padding: 0 0px;
+    border-radius: 10px;
+    border: 0;
+    -webkit-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+    -moz-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+    box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+}
+
+li
+{
+   list-style: none;
+   font-size: 5px;
+}
+
+
+.wrapper {
+    width: 100%;
+    background-image: url('phonebg.jpg');
+    background-size: fixed;
+}
+
+.wrapper .phone {
+    width: 350px;
+    margin: 0 auto 0 auto;
+    margin-right: 10%;
+    background-color: rgb(160, 201, 255);
+    box-shadow: 10px 10px 20px 20px rgba(132, 132, 132, 0.8)
+}
+
+.wrapper .phone span.title {
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    text-align: center;
+}
+
+.wrapper .phone .phone-container {
+    width: 100%;
+    margin-top: 0px;
+}
+
+.wrapper .phone .phone-container .keyboard {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 40px;
+}
+
+.wrapper .phone .phone-container .keyboard .number {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+}
+
+.wrapper .phone .phone-container .keyboard .number.aling-right {
+    text-align: right;
+    width: 100%;
+}
+
+.wrapper .phone .phone-container .keyboard .number span {
+    font-size: 24px;
+    color: #4d4d4d;
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.wrapper .phone .phone-container .keyboard .number span.call-button {
+    opacity: 0;
+    transition: 250ms;
+}
+
+.wrapper .phone .phone-container .keyboard .number span.call-button.show {
+    opacity: 1;
+}
+
+.wrapper .phone .phone-container .keyboard .number span.call-button img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wrapper .phone .phone-container .keyboard .number span i {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background: white;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: 250ms;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+    box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+}
+
+.wrapper .phone .phone-container .keyboard .number span i.delete {
+    background: transparent;
+    box-shadow: 0 0 0 0;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    -ms-box-shadow: 0 0 0 0;
+    color: #4d4d4d;
+}
+
+.wrapper .phone .phone-container .keyboard .number span i.delete img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wrapper .phone .phone-container .keyboard .number span:hover i {
+    color: black;
+}
+
+.wrapper .phone .phone-container .keyboard .number span:active i {
+    transform: translateY(1px);
+    -webkit-box-shadow: 5px 5px 24px 0px rgba(132, 132, 132, 0.18);
+    -moz-box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
+    box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
+}
+
+.wrapper .phone .phone-container .keyboard .number span:active i.delete {
+    box-shadow: 0 0 0 0;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    -ms-box-shadow: 0 0 0 0;
+    transform: translateY(0px);
+}
+
+.wrapper .phone .phone-container .keyboard .number span:active i.delete img {
+    transition: 250ms;
+}
+
+.wrapper .phone .phone-container .keyboard .number span:active i.delete:active img {
+    transform: translateY(2px);
+}

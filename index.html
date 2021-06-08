@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <!-- IE可能不見得有效 -->
+    <META HTTP-EQUIV="EXPIRES" CONTENT="0">
+    <!-- 設定成馬上就過期 -->
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <title>phone keyboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+</head>
+
+<body>
+    <div id="myScene"></div>
+
+    <div style="background-image: url('background.jpg');"></div>
+
+
+    <div class='wrapper'>
+
+
+        <header>
+            <img src="22.png" style="width:120px; text-align: center;
+        margin: 0 auto;">
+        </header>
+
+        <main>
+
+
+
+            <div id="myScene" class="wrapper1">
+
+                <a class="btn" href="loading.html"><i class="fas fa-phone-alt"></i>Vol.1</a>
+                <a class="btn" href="loading2.html"><i class="fas fa-phone-alt"></i>Vol.2</a>
+
+            </div>
+
+
+
+
+        </main>
+
+        <footer>
+            <p>SUBCLUB MUSIC</p>
+        </footer>
+
+    </div>
+
+    <!-- partial -->
+    <script src="http://threejsplaygnd.brangerbriz.net/js/three.min.js"></script>
+    <script src="http://threejsplaygnd.brangerbriz.net/js/Detector.js"></script>
+    <script>
+        var camera;
+        var scene;
+        var renderer;
+        var mesh;
+
+        init();
+        animate();
+
+        function init() {
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+
+            var light = new THREE.DirectionalLight(0xffffff);
+            light.position.set(0, 1, 1).normalize();
+            scene.add(light);
+
+            var geometry = new THREE.CubeGeometry(12, 16, 1);
+            var material1 = new THREE.MeshPhongMaterial({
+                map: THREE.ImageUtils.loadTexture('text/1.png')
+            });
+            var material2 = new THREE.MeshPhongMaterial({
+                map: THREE.ImageUtils.loadTexture('text/2.png')
+            });
+            var material3 = new THREE.MeshPhongMaterial({
+                map: THREE.ImageUtils.loadTexture('text/3.png')
+            });
+            var material4 = new THREE.MeshPhongMaterial({
+                map: THREE.ImageUtils.loadTexture('text/4.png')
+            });
+            var material5 = new THREE.MeshPhongMaterial({
+                map: THREE.ImageUtils.loadTexture('text/5.png')
+            });
+            var material6 = new THREE.MeshPhongMaterial({
+                map: THREE.ImageUtils.loadTexture('text/6.png')
+            });
+
+            var materials = [material1, material2, material3, material4, material5, material6];
+
+            var meshFaceMaterial = new THREE.MeshFaceMaterial(materials);
+
+            mesh = new THREE.Mesh(geometry, meshFaceMaterial);
+            mesh.position.z = -50;
+            scene.add(mesh);
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight * .8);
+            /*document.body.appendChild(renderer.domElement); */
+            document.getElementById("myScene").appendChild(renderer.domElement);
+
+            window.addEventListener('resize', onWindowResize, false);
+
+            render();
+        }
+
+        function animate() {
+
+            mesh.rotation.y += .02;
+
+            render();
+            requestAnimationFrame(animate);
+        }
+
+        function render() {
+            renderer.render(scene, camera);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            render();
+        }
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
