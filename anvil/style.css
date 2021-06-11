@@ -35,9 +35,6 @@ header {
     position: fixed;
 
 }
-.wrapper{
-    min-height: 100%;
-}
 
 audio {
     display: none;
