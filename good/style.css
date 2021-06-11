@@ -24,7 +24,9 @@ body {
     min-height: 100%;
     position: fixed;
 }
-
+.wrapper {
+    min-height: 100%;
+}
 
 
 
