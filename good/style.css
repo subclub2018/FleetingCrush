@@ -28,15 +28,8 @@ body {
 
 
 
-
 .wrapper {
     min-height: 100%;
-}
-
-
-
-audio {
-    display: none;
 }
 
 header {
@@ -55,6 +48,12 @@ header {
     position: fixed;
 
 }
+
+audio {
+    display: none;
+}
+
+
 
 
 p {
